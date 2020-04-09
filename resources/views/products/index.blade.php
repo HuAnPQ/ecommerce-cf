@@ -1,6 +1,7 @@
 @extends('layouts.app');
 
 @section('content')
+<products-component></products-component>
 <div class="container">
     <div class="row">
         @foreach ($products as $product)
