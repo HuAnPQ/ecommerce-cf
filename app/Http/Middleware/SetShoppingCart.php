@@ -20,6 +20,7 @@ class SetShoppingCart
         $shopping_cart_id = \Session::get($sessionName);
 
         $shopping_cart = ShoppingCart::findOrCreateById($shopping_cart_id);
+
         \Session::put($sessionName, $shopping_cart->id);
 
         $request->shopping_cart = $shopping_cart;

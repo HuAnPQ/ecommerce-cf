@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\ShoppingCart;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -14,7 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
+        View::composer('*',function($view){
             $sessionName = 'shopping_cart_id';
             $shopping_cart_id = \Session::get($sessionName);
 
